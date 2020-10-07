@@ -17,6 +17,11 @@ function sayHello(name) {
 
 let message = sayHello(username);
 var nextMessage = sayHello('Test');
+
+// Declaration 
+
+var username = undefined;
+
 ```
 
 2.
@@ -33,6 +38,25 @@ function sayHello(name) {
 
 let message = sayHello(username);
 var nextMessage = sayHello('Test');
+
+// Declaration 
+
+var username = undefined;
+let number;
+
+function sayHello(name) {
+  return `Hello ${name}`;
+}
+
+let message;
+var nextMessage = undefined;
+
+//Execution 
+
+username = 'Arya';
+
+RefrenceError = number is not defined;
+
 ```
 
 3.
@@ -49,6 +73,19 @@ let sayHello = function (name) {
 
 let message = sayHello(username);
 var nextMessage = sayHello('Test');
+
+// Declaration 
+
+let username;
+let number;
+
+let sayHello;
+
+let message;
+var nextMessage = undefined;
+
+//Execution
+RefrenceError - username is not defined;
 ```
 
 4.
@@ -65,6 +102,26 @@ let sayHello = function (name) {
 };
 
 var nextMessage = sayHello('Test');
+
+//Declaration 
+
+let username;
+
+let number;
+
+let message;
+
+let sayHello;
+
+var nextMessage = undefined;
+
+//Execution
+
+username = 'Arya';
+
+ReferenceError - number is not defined.
+
+
 ```
 
 5.
@@ -74,6 +131,16 @@ console.log(name);
 console.log(age);
 var name = 'Lydia';
 let age = 21;
+
+//Declaration
+
+var name = undefined;
+let age;
+
+//Execution
+ReferenceError - age is not defined.
+
+
 ```
 
 6.
@@ -87,21 +154,38 @@ function sayHi(name) {
 }
 
 sayHi();
-```
 
-6.
-
-```js
-sayHi();
+//Declaration
 function sayHi(name) {
   console.log(name);
   console.log(age);
   var name = 'Lydia';
   let age = 21;
 }
+
+//Execution
+
+ReferenceError - age is not defined.
+
 ```
 
 7.
+
+```js
+sayHi();
+function sayHi(name) {
+  console.log(name);
+  console.log(age);
+  var name = 'Lydia';
+  let age = 21;
+}
+
+//Declaration 
+
+
+```
+
+8.
 
 ```js
 sayHi();
@@ -113,16 +197,29 @@ let sayHi = function sayHi(name) {
 };
 ```
 
-8.
+9.
 
 ```js
 let num1 = 21;
 console.log(sum);
 var sum = num1 + num2;
 let num2 = 30;
+
+//Declaration 
+
+let num1;
+var sum = undefined;
+let num2;
+
+//Execution 
+
+num1 = 21;
+
+RefrenceError - num2 is not defined.
+
 ```
 
-9.
+10.
 
 ```js
 var num1 = 21;
@@ -138,21 +235,29 @@ function addAgian(a, b) {
 let num2 = 200;
 
 let sum = add(num1, num2, 4, 5, 6);
-```
 
-10.
+//Declaration 
 
-```js
-function test(a) {
-  let num1 = 21;
-  return add(a, num1);
+var num1 = undefined;
+
+let sum2;
+
+let add;
+
+function addAgian(a, b) {
+  return a + b;
 }
 
-let sum = test(100);
+let num2;
 
-let add = (a, b) => {
-  return a + b;
-};
+let sum;
+
+//Execution
+
+var num1 = 21;
+
+referenceError - addAgain is not defined.
+
 ```
 
 11.
@@ -165,7 +270,64 @@ function test(a) {
 
 let sum = test(100);
 
+let add = (a, b) => {
+  return a + b;
+};
+
+//Declaration
+
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+
+let sum;
+
+let add;
+
+//Execution
+
+ReferenceError - add is not defined.
+```
+
+12.
+
+```js
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+
+let sum = test(100);
+
 function add(a, b) {
   return a + b;
 }
+
+//Declaration
+
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+
+let sum;
+
+function add(a, b) {
+  return a + b;
+}
+
+//Execution 
+
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+
+let sum = test(100);
+
+function add(a, b) {
+  return a + b;
+}
+
 ```
